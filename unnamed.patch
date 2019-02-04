@@ -1,0 +1,105 @@
+Index: shuffle.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- shuffle.html	(date 1549285303758)
++++ shuffle.html	(date 1549285303758)
+@@ -0,0 +1,96 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Shuffle</title>
++</head>
++<style>
++    html{
++        margin:0 0 0 0;
++        padding: 0 0 0 0 ;
++    }
++    body{
++        font-family:Serif;
++        text-align: center;
++    }
++   div img{
++       height: 300px;
++        width: 300px;
++
++    }
++    #pics{  background: yellow;
++
++        width: 908px;
++        height: 910px;
++        border: solid 1px black ;
++        margin:auto;
++    }
++</style>
++<body>
++<h1>MonkeyShuffle</h1>
++<div id="div1">Mohammad</div>
++<div id="pics">
++    <img src="img/A2.jpg">
++    <img  src="img/A1.jpg">
++    <img src="img/A3.jpg">
++    <img src="img/A4.jpg">
++    <img src="img/A5.jpg">
++    <img src="img/A6.jpg">
++    <img src="img/A7.jpg">
++    <img src="img/A9.jpg">
++    <img src="img/A8.jpg">
++</div>
++<script>
++var  plaats=document.getElementsByTagName("img");
++    x=0;
++    i=0;
++  var  xNumber=[];
++    while (xNumber.length<9) {
++         x = Math.floor(Math.random()*9+1);
++         if (xNumber.lastIndexOf(x)==-1) {
++             xNumber.push(x);
++         }
++    }
++
++ function myFun() {
++     'use strict';
++    var  x=0;
++    for (var plaatje in plaats) {
++        plaats[plaatje].src = "img/A" + xNumber[x] + ".jpg";
++        x++;
++    }
++}
++window.onload=function () {
++    'use strict';
++    setInterval(myFun,1000);
++};
++
++
++/*
++window.onload=  setInterval(function () {
++var  x=0;
++for (var plaatje in plaats) {
++    console.log(plaats[plaatje]);
++    plaats[plaatje].src = "img/A" + xNumber[x] + ".jpg";
++    x++;
++}
++},1000);
++*/
++
++/*
++Thet zelfde foto
++for (var plaatje in plaats) {
++    console.log(plaats[plaatje]);
++    plaats[plaatje].src="img/A"+xNumber[x]+".jpg";
++
++}
++*/
++/*for (i=0;i<plaats.length; i++) {
++    var  x = Math.floor(Math.random()*9+1);
++plaats[i].src="img/A"+x+".jpg";
++}
++document.getElementById("div1").innerHTML=x;
++*/
++</script>
++</body>
++</html>
+\ No newline at end of file
